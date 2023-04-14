@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Producto extends Model
 {
-    //use HasFactory;
+    use HasFactory;
     protected $fillable = [
         'prod_nombre',
         'prod_precio',

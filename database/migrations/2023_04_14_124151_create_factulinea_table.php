@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('factulinea', function (Blueprint $table) {
             $table->id();
+            $table->date('fact_fecha');
+            //$table->string('fact_user_id');
+            $table->unsignedBigInteger('fact_formulaid');
+            $table->unsignedBigInteger('fact_productoid');
+            $table->foreign('fact_formulaid')->references('id')->on('formulas');
+            $table->foreign('fact_productoid')->references('id')->on('productos');
             $table->timestamps();
         });
     }
