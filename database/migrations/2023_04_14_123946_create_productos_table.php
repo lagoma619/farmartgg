@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('prod_precio', 30);
             $table->string('prod_lote');
             $table->date('prod_fecha_vencimiento');
-            $table->boolean('prod_estado');
+            $table->string('prod_estado');
             $table->timestamps();
         });
     }

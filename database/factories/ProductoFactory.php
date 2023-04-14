@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Producto;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class ProductoFactory extends Factory
 {
@@ -14,11 +15,11 @@ class ProductoFactory extends Factory
     {
 
         return [
-            'prod_nombre' => $this->faker->company(),
-            'prod_lote' => $this->faker->randomAscii(),
-            'prod_fecha_vencimiento' => $this->faker->dateTimeBetween('-1 years','2 years'),
-            'prod_precio' => $this->faker->randomNumber(8),
-            'prod_estado' => $this->faker->randomElement(['Activo', 'Inactivo'])
+            'prod_nombre' => $this->faker->unique()->safeColorName(),
+            'prod_lote' => Str::random(8),
+            'prod_fecha_vencimiento' => $this->faker->dateTimeBetween('1 years','3 years'),
+            'prod_precio' => $this->faker->randomNumber(6),
+            'prod_estado' => $this->faker->randomElement(['Activo'])
         ];
     }
 }
