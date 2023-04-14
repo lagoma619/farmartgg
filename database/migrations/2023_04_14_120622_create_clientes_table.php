@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('clie_telefono');
             $table->string('clie_tipo_id');
             $table->string('clie_numero_id')->unique();
-            $table->boolean('clie_estado');
+            $table->String('clie_estado');
             $table->timestamps();
         });
     }
