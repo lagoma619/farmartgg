@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TipoFacturacion extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'tipofact_descripcion'
+        ];
 }

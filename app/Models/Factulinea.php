@@ -10,6 +10,7 @@ class Factulinea extends Model
 {
     //use HasFactory;
     protected $fillable = [
+        'fact_fecha',
         'fact_formulaid',
         'fact_productoid'
     ];
