@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('factulineas', function (Blueprint $table) {
             $table->id();
-            $table->date('fact_fecha');
+            $table->date('factlinea_fecha');
             //$table->string('fact_user_id');
-            $table->unsignedBigInteger('fact_formulaid');
-            $table->unsignedBigInteger('fact_productoid');
-            $table->foreign('fact_formulaid')->references('id')->on('formulas');
-            $table->foreign('fact_productoid')->references('id')->on('productos');
+            $table->unsignedBigInteger('factlinea_formulaid');
+            $table->unsignedBigInteger('factlinea_productoid');
+            $table->unsignedBigInteger('fact_facturaid');
+            $table->foreign('factlinea_formulaid')->references('id')->on('formulas');
+            $table->foreign('factlinea_productoid')->references('id')->on('productos');
+            $table->foreign('fact_facturaid')->references('id')->on('facturas');
             $table->timestamps();
         });
     }

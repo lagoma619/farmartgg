@@ -27,4 +27,17 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+/*    Route::get('/factura', function () {
+        return view('facturas.index');
+    })->name('listaFacturas');
+  */
+
+    Route::resource('factura', \App\Http\Controllers\FacturaController::class);
+
+    Route::get('/factura/create', function () {
+        return view('facturas.create');
+    })->name('crearFactura');
+
+
 });
