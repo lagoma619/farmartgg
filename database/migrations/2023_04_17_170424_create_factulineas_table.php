@@ -19,6 +19,8 @@ return new class extends Migration
             //$table->string('fact_user_id');
             $table->unsignedBigInteger('factlinea_formulaid');
             $table->unsignedBigInteger('factlinea_productoid');
+            $table->integer('factlinea_productocantidad');
+            $table->integer('factlinea_productoprecio');
             $table->unsignedBigInteger('fact_facturaid');
             $table->foreign('factlinea_formulaid')->references('id')->on('formulas');
             $table->foreign('factlinea_productoid')->references('id')->on('productos');

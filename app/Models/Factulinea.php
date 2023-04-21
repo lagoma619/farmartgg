@@ -10,9 +10,12 @@ class Factulinea extends Model
 {
     //use HasFactory;
     protected $fillable = [
-        'fact_fecha',
-        'fact_formulaid',
-        'fact_productoid'
+        'factlinea_fecha',
+        'factlinea_formulaid',
+        'factlinea_productoid',
+        'factlinea_productocantidad',
+        'factlinea_productoprecio',
+        'fact_facturaid',
     ];
 
     public function formulas(): HasMany

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('fact_formulaid');
             $table->foreign('fact_formulaid')->references('id')->on('formulas');
+            $table->string('fact_fecha');
+            $table->integer('fact_total');
             $table->timestamps();
         });
     }
