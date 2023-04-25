@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_facturacion', function (Blueprint $table) {
+        Schema::create('tipo_facturacions', function (Blueprint $table) {
             $table->id();
             $table->string('tipofact_descripcion');
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_facturacion');
+        Schema::dropIfExists('tipo_facturacions');
     }
 };

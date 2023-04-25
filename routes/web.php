@@ -35,9 +35,4 @@ Route::middleware([
 
     Route::resource('factura', \App\Http\Controllers\FacturaController::class);
 
-    Route::get('/factura/create', function () {
-        return view('facturas.create');
-    })->name('crearFactura');
-
-
 });

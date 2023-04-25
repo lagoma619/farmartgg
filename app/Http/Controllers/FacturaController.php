@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Factura;
-use App\Models\Formula;
-use App\Models\User;
+use App\Models\TipoFacturacion;
 use Illuminate\Http\Request;
+
 
 class FacturaController extends Controller
 {
@@ -14,7 +14,7 @@ class FacturaController extends Controller
      */
     public function index()
     {
-        $facturas = Factura::join('formulas','fact_formulaid','=','formulas.id');
+        $facturas = Factura::join('facturas','fact_formulaid','=','formulas.id');
         //dd($facturas);
 
         return view('facturas.index', compact('facturas'));
@@ -26,8 +26,9 @@ class FacturaController extends Controller
      */
     public function create()
     {
-        //
-        return view('facturas.create');
+        $tiposfacturacion = TipoFacturacion::all();
+
+        return view('facturas.create', compact('tiposfacturacion'));
     }
 
     /**
