@@ -20,17 +20,34 @@
                         <form>
 
                             <div class="container columns-2">
-                                <div class="mb-4 px-3 shrink-0">
-                                        <label for="clie_numero_id" class="lg:absolute mb-2 ml-1 w-full font-bold text-xs text-slate-700 dark:text-gray-500">Número de documento</label>
+                                <div class="mb-4 px-3 flex justify-content-start items-start">
+                                        <label for="clie_numero_id" class="shrink-1 lg:absolute mb-2 ml-1 w-1/3 font-bold text-xs dark:text-gray-500">Número de documento</label>
                                         <input type="text" name="clie_numero_id" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" />
+                                    <button type="button" class="text-white w-1 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="">Buscar paciente</button>
                                     <script>
-                                        document.addEventListener('keydown',function(event) {
+
+                                        //var clie_numero_id = document.getElementById('clie_numero_id');
+                                        //var isFocused = (document.activeElement === clie_numero_id);
+
+                                        var activeElement = document.activeElement;
+                                        var myElement = document.getElementById('clie_numero_id');
+
+                                        if (activeElement === myElement) {
+                                            console.log("Oprimiste la tecla ");
+                                        };
+
+
+                                        //if (isFocused === clie_numero_id) {
+                                          //  console.log("Oprimiste la tecla ");
+                                        //};
+
+                                       /* document.addEventListener('keydown',function(event){
                                             // TAB detectado
-                                            if (event.key == 'Tab') {
+                                            if (event.key === 'Tab'){
                                                 // Código para la tecla TAB
                                                 console.log("Oprimiste la tecla TAB");
                                             }
-                                        });
+                                        });*/
                                     </script>
                                 </div>
                                 <div class="mb-4 px-3 shrink-0">
@@ -73,32 +90,9 @@
                             <p class="mb-0 dark:text-black">Detalle de la factura</p>
 
 
-                            <script>
-                            var myTable = document.querySelector("table");
-                            function agregarFila(){
-                            var row = myTable.insertRow(myTable.rows.length);
-                            var cell1 = row.insertCell(0);
-                            var cell2 = row.insertCell(1);
-                            var cell3 = row.insertCell(2);
-                            var cell4 = row.insertCell(3);
-                            cell1.innerHTML = '<input type="text" name="clie_numero_id" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" />';;
-                            cell2.innerHTML = '<input type="text" name="clie_numero_id" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" />';;
-                            cell3.innerHTML = '<input type="text" name="clie_numero_id" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" />';;
-                            cell4.innerHTML = '<input type="text" name="clie_numero_id" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" />';;
-                            }
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="agregarFila()">Agregar producto</button>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="eliminarFila()">Eliminar producto</button>
 
-                            function eliminarFila(){
-                            var rowCount = myTable.rows.length;
-                            if(rowCount <= 1) {
-                            alert('No se puede eliminar el encabezado');
-                            } else {
-                            myTable.deleteRow(rowCount -1);
-                            }
-                            }
-                            </script>
-
-                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="agregarFila()">Agregar fila</button>
-                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="eliminarFila()">Eliminar fila</button>
 
                             <table class="table">
                                 <thead>
@@ -111,10 +105,10 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th scope="row"> <input type="text" name="clie_numero_id" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center"/></th>
-                                    <td><input type="text" name="clie_numero_id" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" /></td>
-                                    <td><input type="text" name="clie_numero_id" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" /></td>
-                                    <td><input type="text" name="clie_numero_id" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" /></td>
+                                    <th scope="row"> <input type="text" name="" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center"/></th>
+                                    <td><input type="text" name="" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" /></td>
+                                    <td><input type="text" name="" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" /></td>
+                                    <td><input type="text" name="" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" /></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -132,4 +126,27 @@
 
     </div>
     </div>
+    <script>
+        var myTable = document.querySelector("table");
+        function agregarFila(){
+            var row = myTable.insertRow(myTable.rows.length);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            cell1.innerHTML = '<input type="text" name="" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" />';;
+            cell2.innerHTML = '<input type="text" name="" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" />';;
+            cell3.innerHTML = '<input type="text" name="" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" />';;
+            cell4.innerHTML = '<input type="text" name="" placeholder="1130599190" class="text-sm w-full rounded-lg border border-solid border-gray-300 placeholder:text-gray-400 focus:border-blue-500 text-center" />';;
+        }
+
+        function eliminarFila(){
+            var rowCount = myTable.rows.length;
+            if(rowCount <= 1) {
+                alert('No se puede eliminar el encabezado');
+            } else {
+                myTable.deleteRow(rowCount -1);
+            }
+        }
+    </script>
 </x-app-layout>

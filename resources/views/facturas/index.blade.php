@@ -18,6 +18,13 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="flex justify-end">
+                    <a href="{{route('factura.create')}}">
+                        <x-button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Nueva fáctura
+                        </x-button>
+                    </a>
+            </div>
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                 <div class="relative flex flex-col w-full min-w-0 mb-0 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
